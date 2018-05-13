@@ -27,18 +27,18 @@ export default class extends Component {
   }
 
   componentDidMount() {    
-    window.addEventListener('scroll', () => this.handleScroll());
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll');
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll() {    
-      const sections = document.querySelectorAll('section');      
-      const activeSectionIndex = this.getActiveSectionIndex(window.pageYOffset);
-      const activeSection = [...sections].reverse()[activeSectionIndex].id;
-      this.setState(() => ({ activeSection }));
+  handleScroll = () => {    
+    const sections = document.querySelectorAll('section');      
+    const activeSectionIndex = this.getActiveSectionIndex(window.pageYOffset);
+    const activeSection = [...sections].reverse()[activeSectionIndex].id;
+    this.setState(() => ({ activeSection }));
   }
   
   handleClick = id => {
