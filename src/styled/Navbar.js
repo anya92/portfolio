@@ -5,7 +5,6 @@ import media from './mediaQueries';
 export const Navbar = styled.nav`
   position: fixed;
   bottom: 0;
-  /* top: 0; */
   left: 0;
   width: 100%;
   background: #FFF;
@@ -14,6 +13,7 @@ export const Navbar = styled.nav`
   display: grid;
   grid-gap: 20px;
   grid-template-rows: 1fr auto;
+  /* box-shadow: 3px 0px 3px rgba(0, 0, 0, .14); */
   ${media.medium`
     height: 70px;
     padding: 20px;
