@@ -43,9 +43,10 @@ export default class extends Component {
   
   handleClick = id => {
     const section = document.getElementById(id);
+    const navbarHeight = document.querySelector('nav').offsetHeight;
     const rect = section.getBoundingClientRect();
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const top = scrollTop + rect.top;
+    const top = scrollTop + rect.top - navbarHeight;
 
     window.scroll({
       top,
@@ -55,26 +56,26 @@ export default class extends Component {
 
   render() {
     const links = [
-      { sectionId: 'home', background: 'blue' },
-      { sectionId: 'about', background: 'green' },
-      { sectionId: 'skills', background: 'red' },
-      { sectionId: 'projects', background: 'purple' },
-      { sectionId: 'contact', background: 'yellow' },      
+      { sectionId: 'home', background: 'blue', icon: 'home' },
+      { sectionId: 'about', background: 'red', icon: 'user' },
+      { sectionId: 'skills', background: 'green', icon: 'gears' },
+      { sectionId: 'projects', background: 'white', icon: 'laptop' },
+      { sectionId: 'contact', background: 'yellow', icon: 'envelope' },      
     ];
     return (
       <Navbar>
-        <Brand>
+        <Brand onClick={() => this.handleClick('home')}>
           <strong>Ania Brajtkopf</strong> | JavaScript Fullstack Developer
         </Brand>
         <Links>
           {
-            links.map(({ sectionId, background }, i) => (
+            links.map(({ sectionId, background, icon }, i) => (
               <Link
                 key={i}
                 background={background}
                 className={ sectionId === this.state.activeSection && 'active'}
                 onClick={() => this.handleClick(sectionId)}
-              />
+              ><i className={`fa fa-${icon}`} /></Link>
             ))
           }
         </Links>

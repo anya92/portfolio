@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import media from './mediaQueries';
 
 export const Container = styled.div`
-  height: 100%;
+  min-height: inherit;
+  /* border: 2px solid #fff; */
   display: grid;
   grid-gap: 40px;
   grid-template-rows: repeat(3, auto);
@@ -17,11 +18,16 @@ export const Title = styled.div`
   padding: 10px 40px;
   justify-self: start;
   h1 {
-    font-size: 4em;
+    font-size: 2rem;
     font-family: Consolas, monospace;
     color: ${props => props.theme[props.color]};
     margin: 0;
   }
+  ${media.medium`
+    h1 {
+      font-size: 4rem;
+    }
+  `}
 `;
 
 export const Subtitle = styled.div`
@@ -29,13 +35,18 @@ export const Subtitle = styled.div`
   h2 {
     color: #fff;
     margin: 0;
-    font-size: 2.2em;
+    font-size: 1.6rem;
     font-weight: 200;
     text-shadow: 0 3px 3px rgba(0, 0, 0, .16);
-    strong {
-      font-weight: 900;
-    }
   }
+  strong {
+    font-weight: 900;
+  }
+  ${media.medium`
+    h2 {
+      font-size: 2.1rem;
+    }
+  `}
 `;
 
 export const WhiteBackground = styled.span`
