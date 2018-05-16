@@ -5,7 +5,8 @@ import media from './mediaQueries';
 export const Container = styled.div`
   min-height: inherit;
   display: grid;
-  grid-gap: 20px;
+  padding: 20px;
+  grid-gap: 25px;
   grid-template-rows: auto auto;
   color: #fff;
   ${media.medium`
@@ -15,7 +16,12 @@ export const Container = styled.div`
 `;
 
 export const Text = styled.div`
-
+  display: grid;
+  grid-gap: 40px;
+  justify-content: center;
+  ${media.medium`
+    display: block;
+  `}
 `;
 
 export const Title = styled.div`
@@ -27,32 +33,64 @@ export const Title = styled.div`
     color: ${props => props.theme[props.color]};
     margin: 0;
     font-size: 3em;
+    text-align: center;
   }
 `;
 
 export const Subtitle = styled.div`
-  margin-left: 100px;
   h2 {
-    font-size: 3em;
+    font-size: 2.2rem;
     font-weight: 300;
     text-shadow: 0 3px 3px rgba(0, 0, 0, .16);
+    margin: 0;
+    text-align: center;
+    ${media.medium`
+      font-size: 3rem;
+      margin: 40px 0;
+    `}
+    ${media.large`
+      font-size: 4rem;
+    `}
   }
   strong {
     font-weight: 900;
   }
 `;
 
+export const Pattern = styled.div`
+  display: grid;
+  justify-content: center;
+  img {
+    height: 20px;
+  }
+  ${media.large`
+    ${props => props.bigger && `
+      img { 
+        height: 40px;
+      }
+    `}
+  `}
+`;
+
 export const Buttons = styled.div`
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 25px;
   justify-content: center;
   align-content: center;
-  font-size: 1.6rem;
   text-shadow: 0 1.5px 2px rgba(0, 0, 0, .16);
   p {
+    font-size: 1.4rem;
     display: inline-block;
-    margin-right: 20px;
+    text-align: center;
+    margin: 0;
   }
+
+  ${media.large`
+    p {
+      font-size: 1.6rem;
+      text-align: left;
+    }
+  `}
 `;
 
 export const ButtonWithLink = styled.div`
@@ -62,7 +100,6 @@ export const ButtonWithLink = styled.div`
   height: 50px;
   min-width: 160px;
   transition: all .3s ease-out;
-  /* margin: 0 10px; */
   .fa {
     margin-right: 10px;
   }
@@ -99,19 +136,11 @@ export const InputWithEmail = styled.input`
   border: 3px solid #fff;
   border-radius: 12px;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: center;
   text-shadow: 0 1.5px 2px rgba(0, 0, 0, .16);
   cursor: pointer;
   &::selection {
     background: transparent;
-  }
-`;
-
-export const Image = styled.div`
-  display: grid;
-  align-content: center;
-  img {
-    width: 100%;
   }
 `;
