@@ -4,13 +4,15 @@ import media from './mediaQueries';
 
 export const Container = styled.div`
   min-height: inherit;
-  /* border: 2px solid #fff; */
   display: grid;
   grid-gap: 40px;
   grid-template-rows: repeat(3, auto);
   align-content: center;
   max-width: 800px;
   margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.6;
 `;
 
 export const Title = styled.div`
@@ -19,7 +21,7 @@ export const Title = styled.div`
   justify-self: start;
   h1 {
     font-size: 2rem;
-    font-family: Consolas, monospace;
+    font-family: 'Nova Mono', monospace;
     color: ${props => props.theme[props.color]};
     margin: 0;
   }
@@ -55,4 +57,7 @@ export const WhiteBackground = styled.span`
   text-shadow: none;
   padding: 0 10px;
   font-weight: 300;
+  strong {
+    font-family: 'Nova Mono', monospace;
+  }
 `;

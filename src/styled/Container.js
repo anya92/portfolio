@@ -3,7 +3,7 @@ import styled, { injectGlobal } from 'styled-components';
 import media from './mediaQueries';
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,700,900|Consolas');
+  @import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,700,900|Nova+Mono');
   * {
     box-sizing: border-box;
   }

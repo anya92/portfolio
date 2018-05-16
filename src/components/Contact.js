@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import Section from '../styled/Section';
 import * as Contact from '../styled/Contact';
+import * as Layout from '../styled/Layout';
 
 import pattern from '../assets/pattern.svg';
 
@@ -25,11 +26,11 @@ export default class extends Component {
   render() {
     return (
       <Section id="contact" background="yellow">
-        <Contact.Container>
+        <Layout.Container>
           <Contact.Text>
-            <Contact.Title color="yellow">
+            <Layout.Title color="yellow">
               <h1>Contact</h1>
-            </Contact.Title>
+            </Layout.Title>
             <Contact.Subtitle>
               <h2>I'd love to hear <br /> from <strong>you!</strong></h2>
             </Contact.Subtitle>
@@ -67,7 +68,7 @@ export default class extends Component {
                 <p>{this.state.copyText}</p>
               </Contact.CopyEmail>
             </Contact.Buttons>
-        </Contact.Container>
+        </Layout.Container>
       </Section>
     );
   }

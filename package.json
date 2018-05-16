@@ -1,9 +1,10 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "private": true,
+  "author": "Ania Brajtkopf",
   "dependencies": {
     "modern-normalize": "^0.4.0",
+    "prismjs": "^1.14.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4",

@@ -14,6 +14,7 @@ export const Navbar = styled.nav`
   grid-gap: 20px;
   grid-template-rows: 1fr auto;
   box-shadow: 3px 0px 3px rgba(0, 0, 0, .14);
+  z-index: 4;
   ${media.medium`
     height: 70px;
     padding: 20px;
