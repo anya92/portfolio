@@ -12,6 +12,10 @@ export const Text = styled.div`
 `;
 
 export const Subtitle = styled.div`
+  position: relative;
+  left: -100%;
+  opacity: 0;
+  transition: all .8s ease-out;
   h2 {
     font-size: 2.2rem;
     font-weight: 300;
@@ -29,12 +33,17 @@ export const Subtitle = styled.div`
   strong {
     font-weight: 900;
   }
+  &.slideFromLeft {
+    left: 0;
+    opacity: 1;
+  }
 `;
 
 export const Pattern = styled.div`
   display: grid;
   justify-content: center;
   img {
+    margin-top: 20px;
     height: 20px;
   }
   ${media.large`
@@ -47,6 +56,10 @@ export const Pattern = styled.div`
 `;
 
 export const Buttons = styled.div`
+  position: relative;
+  right: -100%;
+  opacity: 0;
+  transition: all 1.2s ease-out;
   display: grid;
   grid-gap: 25px;
   justify-content: center;
@@ -57,6 +70,11 @@ export const Buttons = styled.div`
     display: inline-block;
     text-align: center;
     margin: 0;
+  }
+
+  &.slideFromRight {
+    right: 0;
+    opacity: 1;
   }
 
   ${media.large`

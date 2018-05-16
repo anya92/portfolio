@@ -10,6 +10,7 @@ export const Container = styled.div`
   grid-template-rows: auto auto;
   align-items: center;
   color: #fff;
+  overflow: hidden;
   ${media.medium`
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
